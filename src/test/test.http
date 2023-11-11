@@ -1,0 +1,67 @@
+### create student
+POST http://localhost:8080/api/students/create
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@test.com",
+  "department": {
+    "departmentName": "Computer Science",
+    "location": "New York"
+  },
+  "subjects": [
+    {
+      "subjectName": "Maths",
+      "marksObtained": 90
+    },
+    {
+      "subjectName": "Science",
+      "marksObtained": 80
+    }
+  ]
+}
+
+### get student by id
+GET http://localhost:8080/api/students/getById/654f411f329dd154c70b077e
+
+### create student
+PUT http://localhost:8080/api/students/update
+Content-Type: application/json
+
+{
+  "id": "654f411f329dd154c70b077e",
+  "name": "Kim Doe",
+  "email": "john@test.com",
+  "department": {
+    "departmentName": "Computer Science",
+    "location": "New York"
+  },
+  "subjects": [
+    {
+      "subjectName": "Maths",
+      "marksObtained": 90
+    },
+    {
+      "subjectName": "Science",
+      "marksObtained": 80
+    }
+  ]
+}
+
+### get student by id
+GET http://localhost:8080/api/students/studentByName/Kim Doe
+
+### studentBynameOrEmail
+GET http://localhost:8080/api/students/studentByNameOrEmail/Kim Doe/john@test.com
+
+### allWithPagination
+GET http://localhost:8080/api/students/allWithSorting
+
+### byDepartmentName
+GET http://localhost:8080/api/students/byDepartmentName?departmentName=Computer Science
+
+### subjectName
+GET http://localhost:8080/api/students/bySubjectName?subjectName=Maths
+
+### emailLike
+GET http://localhost:8080/api/students/emailLike?email=john
